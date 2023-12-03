@@ -18,7 +18,7 @@ This project is a simple Body Mass Index (BMI) calculator implemented in C++. BM
 
 1. Clone the repository to your local machine.
    ```bash
-   git clone https://github.com/kripa-sindhu-007/bmi-calculator-cpp.git
+   git clone https://github.com/kripa-sindhu-007/BMI-Calculator.git
 2. Compile the source code using a C++ compiler.
    ```bash
    g++ bmi_calculator.cpp -o bmi_calculator
