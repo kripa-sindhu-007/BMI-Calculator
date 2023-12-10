@@ -1,72 +1,79 @@
-#include<iostream>
-#include<conio.h> 
+#include <iostream>
 
-using namespace std;
-  
 void calculateBMI() {
-     
-	system("cls");
-	
-	double weight;
-	double height;
-	
-	cout<<endl<<endl;
-	cout << "Enter your weight (in kilograms): ";
-    cin >> weight;
- 
-    cout << "Enter your height (in meters): ";
-    cin >> height;
- 
+    system("cls");
+
+    double weight, height;
+
+    std::cout << "\n\n";
+    std::cout << "Enter your weight (in kilograms): ";
+    std::cin >> weight;
+
+    std::cout << "Enter your height (in meters): ";
+    std::cin >> height;
+
     double bmi = weight / (height * height);
- 	
- 	cout<<endl<<endl;
- 	cout<<"----------------------------------"<<endl;
-    cout << "Your Body Mass Index is " << bmi << endl;
- 
- 	cout<<"----------------------------------"<<endl;
-    if(bmi < 18.5)
-        cout << "You are Underweight";
-    else if(bmi >= 18.5 && bmi <= 25)
-        cout << "You are Perfectly Healthy";
-    else if(bmi > 25)
-        cout << "You are Overweight";
- 	cout<<endl<<"----------------------------------";
-        
-	cout<<"\n\nPress any key to go back to Menu... ";
-	getch(); 
- 
+
+    std::cout << "\n\n";
+    std::cout << "----------------------------------" << std::endl;
+    std::cout << "Your Body Mass Index is " << bmi << std::endl;
+    std::cout << "----------------------------------" << std::endl;
+
+    if (bmi < 18.5)
+        std::cout << "You are Underweight";
+    else if (bmi >= 18.5 && bmi <= 25)
+        std::cout << "You are Perfectly Healthy";
+    else if (bmi > 25)
+        std::cout << "You are Overweight";
+
+    std::cout << "\n\n----------------------------------";
+    std::cout << "\n\nPress any key to go back to Menu... ";
+    std::cin.ignore(); // Clear the input buffer
+    std::cin.get();
 }
 
-void instructions(){
-	
-	system("cls");
-	cout<<"Instructions";
-	cout<<"\n----------------";
-	cout<<"\n BMI is less than 18.5 : You are Underweight";
-	cout<<"\n BMI is between 18.5 and 25 (inclusive) : You are Perfectly Healthy";
-	cout<<"\n BMI is greater than 25 : You are Overweight";
-	cout<<"\n\nPress any key to go back to menu";
-	getch();
+void instructions() {
+    system("cls");
+    std::cout << "Instructions";
+    std::cout << "\n----------------";
+    std::cout << "\n BMI is less than 18.5 : You are Underweight";
+    std::cout << "\n BMI is between 18.5 and 25 (inclusive) : You are Perfectly Healthy";
+    std::cout << "\n BMI is greater than 25 : You are Overweight";
+    std::cout << "\n\nPress any key to go back to menu";
+    std::cin.ignore();
+    std::cin.get();
 }
 
-int main()
-{ 
-	do{
-		system("cls");
-		cout<<" ------------------------------------ "<<endl; 
-		cout<<" |          BMI Calculator          | "<<endl; 
-		cout<<" ------------------------------------"<<endl<<endl;
-		cout<<"1. Calculate BMI"<<endl;
-		cout<<"2. BMI Rules"<<endl;	 
-		cout<<"3. Quit"<<endl<<endl;
-		cout<<"Select option: ";
-		char op = getche();
-		
-		if( op=='1') calculateBMI();
-		else if( op=='2') instructions();
-		else if( op=='3') exit(0);
-		
-	}while(1);
-	
-	return 0;
+int main() {
+    do {
+        system("cls");
+        std::cout << " ------------------------------------ " << std::endl;
+        std::cout << " |          BMI Calculator          | " << std::endl;
+        std::cout << " ------------------------------------" << std::endl
+                  << std::endl;
+        std::cout << "1. Calculate BMI" << std::endl;
+        std::cout << "2. BMI Rules" << std::endl;
+        std::cout << "3. Quit" << std::endl
+                  << std::endl;
+        std::cout << "Select option: ";
+        char op;
+        std::cin >> op;
+
+        switch (op) {
+            case '1':
+                calculateBMI();
+                break;
+            case '2':
+                instructions();
+                break;
+            case '3':
+                exit(0);
+                break;
+            default:
+                std::cout << "Invalid option. Please try again." << std::endl;
+        }
+
+    } while (true);
+
+    return 0;
 }
